@@ -15,7 +15,7 @@
 
 
 <!-- Aqui criei um form ja que vou fazer um formulário de perguntas, junto com um fieldset para deixar como um formulário -->
-<form method="POST">
+<form method="POST" enctype="multipart/form-data">
 
 <!-- aqui criei uma área para o formulário, e as informações -->
 
@@ -84,7 +84,7 @@
 
 <!-- aqui criei uma área para o envio do currículo -->
 
-<fieldset>
+<fieldset style = "width: 100px">
     
     <!-- o nome da área -->
 
