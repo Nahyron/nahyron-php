@@ -215,7 +215,7 @@ file_put_contents("arquivo/formulario.txt", $linha, FILE_APPEND);
                 $valor = isset($linha_dados[$i]) ? htmlspecialchars($linha_dados[$i]) : '';
                 if($i == 6){
                     echo "<td><img src='arquivo/$valor' alt='$valor'></td>";
-                    echo "<td>VocÊ receberá $receber </td>";
+                    echo "<td>Você receberá $receber </td>";
                 }else{
 
                     echo "<td>$valor</td>";

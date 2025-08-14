@@ -33,7 +33,7 @@ $arquivo = 'arquivo/formulario.txt';
             for($i = 0; $i < $max_campos; $i++){
                 $valor = isset($linha_dados[$i]) ? htmlspecialchars($linha_dados[$i]) : '';
                 if($i == 6){
-                    echo "<td><img src='arquivo/$valor' alt='$valor></td>'";
+                    echo "<td><img src='arquivo/$valor' alt='$valor style = 'width: 100px'></td>";
             }else{
             echo "<td>$valor</td>";
         }
