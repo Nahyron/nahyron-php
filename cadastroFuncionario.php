@@ -142,18 +142,39 @@ $cep = $_POST ["cep"];
 $genero = $_POST["genero"];
 $dinheiro = $_POST["dinheiro"];
 $horas = $_POST["horas"];
-$arquivo = $_POST["arquivo"];
+$arquivo = $_FILES["arquivo"];
+$pasta_destino = "arquivo/";
+$archive = "";
 
 
 // aqui criei uma variavel, com as variaveis que puxei do html para o php, que é os campos que serão mostrados no arquivo (.txt)
 
- $linha = "$nome | $idade | $cep | $genero | $dinheiro | $horas | $arquivo \n";
-
 // aqui eu puxo o arquivo que criei e conecto com o php,assim puxando a variavel ($linha) e as variaveis que estão dentro delas para o arquivo (.txt) 
 
-  file_put_contents("arquivo/formulario.txt", $linha, FILE_APPEND);
 
 
+
+if($arquivo["error"] === UPLOAD_ERR_OK) {
+    $nome_temp = $arquivo["tmp_name"];
+    $nome_final = $pasta_destino . basename($arquivo["name"]);
+    $archive = basename($arquivo["name"]);
+    
+    if(!file_exists($pasta_destino)) {
+        mkdir($pasta_destino, 0755, true); //Cria pasta se não existir
+    }
+    
+    if(move_uploaded_file($nome_temp, $nome_final)){
+        echo "Arquivo enviado com sucesso";
+    }else {
+        echo "Falha ao mover arquivo";
+    }
+}else{
+    echo "Erro no upload: " . $arquivo["error"];
+}
+
+
+$linha = "$nome | $idade | $cep | $genero | $dinheiro | $horas | $archive \n";
+file_put_contents("arquivo/formulario.txt", $linha, FILE_APPEND);
 }
 
 

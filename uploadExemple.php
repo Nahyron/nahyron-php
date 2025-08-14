@@ -18,7 +18,7 @@
 <?php
 
    if ($_SERVER["REQUEST_METHOD"] == "POST"){
-    $pasta_destino = "pasta/";
+    $pasta_destino = "arquivo/";
     $arquivo = $_FILES["arquivo"];
 
 
