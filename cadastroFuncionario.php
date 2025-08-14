@@ -19,7 +19,7 @@
 
 <!-- aqui criei uma área para o formulário, e as informações -->
 
-<fieldset>
+<fieldset style = "width: 500px">
 
 <!-- aqui serve para nomear o formulário -->
 
