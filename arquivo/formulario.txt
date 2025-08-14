@@ -1,4 +1,2 @@
-dia | 12 | 4324434 | Masculino | 432432434 | 32432432 |tijolos.jpg 
-dia | 12 | 4324434 | Masculino | 432432434 | 32432432 |tijolos.jpg 
-dia delicia | 43434 | 32432434 | Masculino | 32434324 | 324324324 |image6.jpg 
-nahyron | 321323 | 213213213 | Masculino | 2321321 | 32321313 |image7.jpg 
+nah | 12 | 1212 | Masculino | 22 | 176 |image5.jpg
+nah | 12 | 1212 | Masculino | 22 | 176 |image5.jpg

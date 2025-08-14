@@ -145,6 +145,8 @@ $horas = $_POST["horas"];
 $arquivo = $_FILES["arquivo"];
 $pasta_destino = "arquivo/";
 $archive = "";
+$receber = $horas * $dinheiro;
+
 
 
 // aqui criei uma variavel, com as variaveis que puxei do html para o php, que é os campos que serão mostrados no arquivo (.txt)
@@ -173,7 +175,7 @@ if($arquivo["error"] === UPLOAD_ERR_OK) {
 }
 
 
-$linha = "$nome | $idade | $cep | $genero | $dinheiro | $horas |$archive \n";
+$linha = "$nome | $idade | $cep | $genero | $dinheiro | $horas |$archive\n";
 file_put_contents("arquivo/formulario.txt", $linha, FILE_APPEND);
 
         $arquivo = 'arquivo/formulario.txt';
@@ -207,12 +209,17 @@ file_put_contents("arquivo/formulario.txt", $linha, FILE_APPEND);
   
         foreach ($dados_linhas as $linha_dados){
             echo "<tr>";
+             
             for($i = 0; $i < $max_campos; $i++){
+               
                 $valor = isset($linha_dados[$i]) ? htmlspecialchars($linha_dados[$i]) : '';
                 if($i == 6){
-                    echo "<td><img src='arquivo/$valor' alt='$valor></td>'";
-            }else{
-            echo "<td>$valor</td>";
+                    echo "<td><img src='arquivo/$valor' alt='$valor'></td>";
+                    echo "<td>VocÊ receberá $receber </td>";
+                }else{
+
+                    echo "<td>$valor</td>";
+                    
         }
             
             }
