@@ -1,5 +1,33 @@
+<form method="POST">
+<fieldset style= "width: 500px; text-align: center;">
+
+<legend>Procurar nome</legend>
+<br>
+<input type="text" name="nome">
+<br><br>
+
+<input type= "submit" value=" Google buscar" style= "width: 150px">
+
+
+
+</fieldset>
+
+
+</form>
+
+
+
+
 <?php
-$arquivo = 'arquivo/formulario.txt';
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST"){
+
+    $nome = $_POST["nome"];
+
+    $arquivo = 'arquivo/formulario.txt';
+
+
+    
 
     if (file_exists($arquivo)) {
         $linhas = file($arquivo);
@@ -30,6 +58,7 @@ $arquivo = 'arquivo/formulario.txt';
   
         foreach ($dados_linhas as $linha_dados){
             echo "<tr>";
+            if ($nome == $linha_dados[0] || $nome == null){
             for($i = 0; $i < $max_campos; $i++){
                 $valor = isset($linha_dados[$i]) ? htmlspecialchars($linha_dados[$i]) : '';
                 if($i == 6){
@@ -40,6 +69,7 @@ $arquivo = 'arquivo/formulario.txt';
             
             }
             echo "</td>";
+            }
         }
 
         echo "</table>";
@@ -48,7 +78,13 @@ $arquivo = 'arquivo/formulario.txt';
     } else {
         echo "Arquivo não encontrado";
     }
+    $valor = "arquivo/formulario.txt";
 
+    if ($nome == null){
+        echo "$valor";
+    }
 
+    
+}
 
-?>
+?> 

@@ -175,7 +175,7 @@ if($arquivo["error"] === UPLOAD_ERR_OK) {
 }
 
 
-$linha = "$nome | $idade | $cep | $genero | $dinheiro | $horas |$archive\n";
+$linha = "$nome| $idade | $cep | $genero | $dinheiro | $horas |$archive\n";
 file_put_contents("arquivo/formulario.txt", $linha, FILE_APPEND);
 
         $arquivo = 'arquivo/formulario.txt';
