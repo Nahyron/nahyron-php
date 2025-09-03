@@ -1,3 +1,10 @@
-nah| 12 | 1212 | Masculino | 22 | 176 |image5.jpg
-jose| 3434 | 4324324 | Masculino | 321 | 323232 |
-mathias| 321321321 | 23132131 | Masculino | 3 | 3 |image7.jpg
+nah|323|213213|Masculino|23|220|
+pedro|212|21212|Masculino|20|220|
+pedro|212|21212|Masculino|20|220||4400
+mathias|321|323213|Masculino|23|220||5060
+mathias|321|323213|Masculino|23|220||5060
+oi|352432|4324234|Masculino|22|220||4840
+oi|352432|4324234|Masculino|22|220||4840
+mathias|43243|24324324|Masculino|20|220||4400
+guedes|32|332|Masculino|23|220||5060
+eu|3243243|4324324|Masculino|25|220||5500

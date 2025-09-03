@@ -145,7 +145,7 @@ $horas = $_POST["horas"];
 $arquivo = $_FILES["arquivo"];
 $pasta_destino = "arquivo/";
 $archive = "";
-$receber = $horas * $dinheiro;
+$receber = $dinheiro * $horas;
 
 
 
@@ -175,7 +175,7 @@ if($arquivo["error"] === UPLOAD_ERR_OK) {
 }
 
 
-$linha = "$nome| $idade | $cep | $genero | $dinheiro | $horas |$archive\n";
+$linha = "$nome|$idade|$cep|$genero|$dinheiro|$horas|$archive|$receber\n";
 file_put_contents("arquivo/formulario.txt", $linha, FILE_APPEND);
 
         $arquivo = 'arquivo/formulario.txt';
@@ -214,8 +214,9 @@ file_put_contents("arquivo/formulario.txt", $linha, FILE_APPEND);
                
                 $valor = isset($linha_dados[$i]) ? htmlspecialchars($linha_dados[$i]) : '';
                 if($i == 6){
+                    
                     echo "<td><img src='arquivo/$valor' alt='$valor'></td>";
-                    echo "<td>Você receberá $receber </td>";
+                    
                 }else{
 
                     echo "<td>$valor</td>";
