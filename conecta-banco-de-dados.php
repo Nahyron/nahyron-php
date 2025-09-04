@@ -6,12 +6,9 @@
     <title>formulario pra banco de dados</title>
 </head>
 <body>
-    <fieldset style="width: 30px; text-align: center;position: absolute; right: 50%; top: 40px;">
+    <form method="POST">
+    <fieldset style="width: 30px; text-align: center;position: absolute; right: 50%;">
     <legend>formulario para DB</legend>
-    <br>
-    <label name="id">Coloque o id do cliente</label>
-    <input type="number" name="id">
-    <br>
     <br>
 
     <label name="name">Coloque seu nome</label>
@@ -44,10 +41,9 @@
     <br>
     <br>
 
-    
+    <input type="submit" value="salve">
 
-
-
+    </form>
 
     </fieldset>
 </body>
@@ -56,6 +52,15 @@
  <?php
 
 
+    if ($_SERVER["REQUEST_METHOD"] == "POST" ){
+
+    $nome = $_POST["name"];
+    $cpf = $_POST["cpf"];
+    $rg = $_POST ["rg"];
+    $endereco = $_POST["ender"];
+    $bairro = $_POST["bairro"];
+    $cep = $_POST["cep"];
+   
 
 
 
@@ -74,25 +79,23 @@ if (!$conn){
 
 echo "Conectado com succes";
 
-//$sql = "INSERT INTO teste01 (
+$sql = "INSERT INTO teste01 (
 
-// idpessoanovaTeste, 
-// pessoanova_nome, 
-// pessoanova_cpf, 
-// pessoanova_rg, 
-// pessoanova_endereco, 
-// pessoanova_bairro, 
-// pessoanova_cep
-// ) VALUES (
-//     3,
-//    'parafal',
-//    '92846295874',
-//    '47384374323',
-//    'rua das paineiras',
-//    'bairro do escuro',
-//    '15503-022'
+pessoanova_nome, 
+pessoanova_cpf, 
+pessoanova_rg, 
+pessoanova_endereco, 
+pessoanova_bairro, 
+pessoanova_cep
+) VALUES (
+   '$nome',
+   '$cpf',
+   '$rg',
+   '$endereco',
+   '$bairro',
+   '$cep'
 
-// );   ";
+);   ";
 
 if(mysqli_query($conn, $sql)){
     echo "<br>Comando executado com sucesso";
@@ -100,4 +103,6 @@ if(mysqli_query($conn, $sql)){
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
 mysqli_close($conn);
+
+}
 ?>
