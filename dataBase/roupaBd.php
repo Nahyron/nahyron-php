@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>roupas pra enviar no banco de dados</title>
+    <link rel="stylesheet" href="_css/main.css">
+  
 </head>
 <body>
+    <div class="container">
     <form method="POST">
-    <fieldset style="width: 30px; text-align: center;position: absolute; right: 50%;">
+    <fieldset style="width: 30px; text-align: center;position: absolute; right: 50%;" class="field">
     <legend>loja de roupa basica sem nada, atividade raynner</legend>
     <br>
 
@@ -36,11 +39,17 @@
     <br>
     <br>
 
-    <input type="submit" value="comprar (nao fazemos reembolso KKJ)">
+    <input class="btn" type="submit" value="comprar (nao fazemos reembolso KKJ)">
+     
 
     </form>
 
     </fieldset>
+    </div>
+    <div class="image">
+        <img src="_images/seta.png" >
+       
+    </div>
 </body>
 </html>
 
@@ -81,7 +90,7 @@ entregarOubuscar
    '$short',
    '$medidaShort',
    '$entoubusc'
-
+    
 );   ";
 
 if(mysqli_query($conn, $sql)){
