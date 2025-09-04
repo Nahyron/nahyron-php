@@ -10,7 +10,7 @@
 <body>
     <div class="container">
     <form method="POST">
-    <fieldset style="width: 30px; text-align: center;position: absolute; right: 50%;" class="field">
+    <fieldset style="width: 18%; text-align: center;position: absolute; right: 50%;" class="field">
     <legend>loja de roupa basica sem nada, atividade raynner</legend>
     <br>
 
@@ -39,7 +39,9 @@
     <br>
     <br>
 
-    <input class="btn" type="submit" value="comprar (nao fazemos reembolso KKJ)">
+    <!-- <input class="btn" type="submit" value="comprar (nao fazemos reembolso KKJ)"> -->
+
+    <button onclick(teste())>compra</button>
      
 
     </form>
@@ -94,10 +96,27 @@ entregarOubuscar
 );   ";
 
 if(mysqli_query($conn, $sql)){
-    echo "<br>Comando executado com sucesso";
+    echo "<br>Comando executado com sucesso<br>";
 } else{
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
+
+// Verifica escolha de campos
+
+$sql = "SELECT * FROM roupas";
+$resultados = mysqli_query($conn, $sql) or die("Erro ao retornar dados");
+
+// loop para ler todos os registros
+$registro = mysqli_fetch_array($resultados);
+
+while ($linha = mysqli_fetch_assoc($resultados)){
+    echo $linha['corBlusa'] . "<br>";
+    echo $linha['medidaBlusa'] . "<br>";
+    echo $linha['corShort'] . "<br>";
+    echo $linha['medidaShort'] . "<br>";
+    echo $linha['entregarOubuscar'] . "<br>";
+}
+
 mysqli_close($conn);
 
 }
