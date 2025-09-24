@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro com conexão DB</title>
+</head>
+
+<style>
+    .container {
+        display: flex;
+        justify-content: center;
+        justify-content: space-around;
+        background-color: gray;
+        margin: -9px;
+        padding: 40px;
+    }
+
+    .container2{
+         display: flex;
+        justify-content: center;
+        justify-content: space-around;
+        background-color: gray;
+        margin: -9px;
+        padding: 40px;
+    }
+
+    button {
+        padding: 20px;
+        width: 300px;
+        background-color: white;
+
+    }
+
+    button:hover {
+        background-color: blueviolet;
+        transition: background-color 0.3s;
+    }
+
+
+    button:not(:hover) {
+        background-color: #f0f0f0;
+        transition: background-color 2s;
+    }
+</style>
+
+
+
+<body>
+    <div class="container">
+
+        <button onclick="window.location.href='CadastroC.php'">Cadastrar cliente</button>
+
+        <button onclick="window.location.href='CadastroF.php'">Cadastrar Movimentos financeiros</button>
+        
+        
+        
+    </div>
+    
+    <div class="container2">
+        
+        <button onclick="window.location.href='consultarC.php'">Consultar dados cadastrados</button>
+        <button onclick="window.location.href='consultarF.php'">Consultar Movimentos financeiros</button>
+
+    </div>
+
+    
+
+</body>
+
+</html>

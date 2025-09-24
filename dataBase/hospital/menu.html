@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+
+
+
+    <style>
+
+        body{
+            background-color: plum;
+        }
+
+
+        h1{
+            text-align: center;
+        }
+
+        .container {
+        display: flex;
+        justify-content: center;
+        justify-content: space-around;
+        background-color: gray;
+        margin: -9px;
+        padding: 40px;
+    }
+
+    .container2{
+         display: flex;
+        justify-content: center;
+        justify-content: space-around;
+        background-color: gray;
+        margin: -9px;
+        padding: 40px;
+    }
+
+    button {
+        padding: 20px;
+        width: 300px;
+        background-color: white;
+
+    }
+
+    button:hover {
+        background-color: blueviolet;
+        transition: background-color 0.3s;
+    }
+
+
+    button:not(:hover) {
+        background-color: #f0f0f0;
+        transition: background-color 2s;
+    }
+    </style>
+</head>
+
+<body>
+    <h1>Onde deseja ir?</h1>
+
+    <div class="container">
+        <button class="btn1" onclick="window.location.href='cadastroP.php'">Cadastro paciente</button>
+        <button class="btn2" onclick="window.location.href='cadastroM.php'">Cadastro Médico</button>
+        <button class="btn3" onclick="window.location.href='prontuario.php'">Cadastrar Pronturario</button>
+    </div>
+    
+    <div class="container2">
+        <button class="btn4" onclick="window.location.href='consultarP.php'">Consultar dados do paciente </button>
+        <button class="btn4" onclick="window.location.href='consultarM.php'">Consultar dados do Médico</button>
+        <button class="btn4" onclick="window.location.href='prontuarioConsu.php'">Consultar dados do prontuario</button>
+        <button class="btn4" onclick="window.location.href='consultarImg.php'">Consultar imagens do Pronturario</button>
+    </div>
+</body>
+
+</html>
