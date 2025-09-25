@@ -15,7 +15,7 @@
     table{
         display: flex;
         justify-content: center;
-        width: 550px;
+        width: 830px;
         margin: 12% auto;
         background-color: skyblue;
     }
@@ -102,8 +102,8 @@ while ($linha = mysqli_fetch_assoc($resultados)){
     echo "<tr>";
     echo "<td>";
     echo $linha ['id'] . "<br>";
-    echo "<td>";
-    echo $linha ['imagem'] . "<br>";
+    echo "<td><img src='";
+    echo $linha ['imagem'] . "'><br>";
     echo "</td>";
 }
 echo "</table>";

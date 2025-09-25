@@ -22,7 +22,7 @@
     $arquivo = $_FILES["arquivo"];
 
 
-        if($arquivo["error"] === UPLOAD_ERR_OK) {
+        if($arquivo["error"] == UPLOAD_ERR_OK) {
             $nome_temp = $arquivo["tmp_name"];
             $nome_final = $pasta_destino . basename($arquivo["name"]);
 
