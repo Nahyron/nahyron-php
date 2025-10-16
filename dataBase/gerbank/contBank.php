@@ -20,7 +20,7 @@
 
             <label for="idC">Id Cliente:</label> <br>
             <input type="number" name="idC"><br><br>
-
+            <button onclick="window.location.href='index.php'">Voltar para menu</button>
 
             <input type="submit">
 
@@ -32,27 +32,27 @@
 
 <?php
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" ){
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $numC = $_POST["numC"];
     $idA = $_POST["idA"];
     $idC = $_POST["idC"];
 
-$servername = "localhost";
-$database = "gerbank";
-$username = "root";
-$password = "";
-// Cria conexão
-$conn = mysqli_connect($servername, $username, $password, $database);
+    $servername = "localhost";
+    $database = "gerbank";
+    $username = "root";
+    $password = "";
+    // Cria conexão
+    $conn = mysqli_connect($servername, $username, $password, $database);
 
-// Verificar conexão;
-if (!$conn){
-    die("Falha na conexão: " . mysql_connect_error());
-}
+    // Verificar conexão;
+    if (!$conn) {
+        die("Falha na conexão: " . mysql_connect_error());
+    }
 
-echo "Conectado com succes";
+    echo "Conectado com succes";
 
-$sql = "INSERT INTO contabanco (
+    $sql = "INSERT INTO contabanco (
 
 numconta, 
 agencia_id,
@@ -65,11 +65,11 @@ cliente_id
     
 );   ";
 
-if(mysqli_query($conn, $sql)){
-    echo "<br>Comando executado com sucesso<br>";
-} else{
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-}
+    if (mysqli_query($conn, $sql)) {
+        echo "<br>Comando executado com sucesso<br>";
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
 
 
 
@@ -77,7 +77,7 @@ if(mysqli_query($conn, $sql)){
 
 
 
-mysqli_close($conn);
+    mysqli_close($conn);
 
 }
 

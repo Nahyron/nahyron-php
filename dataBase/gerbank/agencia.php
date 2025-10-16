@@ -22,6 +22,7 @@
         <input type="text" name="end"><br><br>
 
         <input type="submit">
+        <button onclick="window.location.href='index.php'">Voltar para menu</button>
 
         </fieldset>
     </form>

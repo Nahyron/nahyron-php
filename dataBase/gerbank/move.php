@@ -29,8 +29,8 @@
 
             <select name="tipo">
                 <option value="debito">Débito</option>
-                <option value="credito">Crédito</option>
-
+                <option value="credito">Crédito</option><br>
+                <button onclick="window.location.href='index.php'">Voltar para menu</button>
                 <input type="submit" value="submit">
             </select>
 
@@ -42,7 +42,7 @@
 
 <?php
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" ){
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $idA = $_POST["idA"];
     $desc = $_POST["desc"];
@@ -51,22 +51,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ){
     $hora = $_POST["hora"];
     $tipo = $_POST["tipo"];
 
-    
-$servername = "localhost";
-$database = "gerbank";
-$username = "root";
-$password = "";
-// Cria conexão
-$conn = mysqli_connect($servername, $username, $password, $database);
 
-// Verificar conexão;
-if (!$conn){
-    die("Falha na conexão: " . mysql_connect_error());
-}
+    $servername = "localhost";
+    $database = "gerbank";
+    $username = "root";
+    $password = "";
+    // Cria conexão
+    $conn = mysqli_connect($servername, $username, $password, $database);
 
-echo "Conectado com succes";
+    // Verificar conexão;
+    if (!$conn) {
+        die("Falha na conexão: " . mysql_connect_error());
+    }
 
-$sql = "INSERT INTO movimentacoes (
+    echo "Conectado com succes";
+
+    $sql = "INSERT INTO movimentacoes (
 
 agencia_id, 
 descricao,
@@ -84,11 +84,11 @@ tipo
     
 );   ";
 
-if(mysqli_query($conn, $sql)){
-    echo "<br>Comando executado com sucesso<br>";
-} else{
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-}
+    if (mysqli_query($conn, $sql)) {
+        echo "<br>Comando executado com sucesso<br>";
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
 
 
 
@@ -96,7 +96,7 @@ if(mysqli_query($conn, $sql)){
 
 
 
-mysqli_close($conn);
+    mysqli_close($conn);
 
 }
 
