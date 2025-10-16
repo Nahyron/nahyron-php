@@ -24,7 +24,7 @@
     <br>
 
     <?php
-    if{
+    if
      ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
@@ -59,7 +59,7 @@ elseif ($op == "/")
         echo "coloque apenas números";
     }
     }  
-    }
+    
 
     ?>
 </body>
