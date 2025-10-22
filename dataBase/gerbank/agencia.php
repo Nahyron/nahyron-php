@@ -22,10 +22,10 @@
         <input type="text" name="end"><br><br>
 
         <input type="submit">
-        <button onclick="window.location.href='index.php'">Voltar para menu</button>
-
-        </fieldset>
-    </form>
+        
+    </fieldset>
+</form>
+<button onclick="window.location.href='index.php'">Voltar para menu</button>
 </body>
 
 </html>
@@ -48,7 +48,7 @@ $conn = mysqli_connect($servername, $username, $password, $database);
 
 // Verificar conexão;
 if (!$conn){
-    die("Falha na conexão: " . mysql_connect_error());
+    die("Falha na conexão: " . mysqli_connect_error());
 }
 
 echo "Conectado com succes";

@@ -30,12 +30,12 @@
             <select name="tipo">
                 <option value="debito">Débito</option>
                 <option value="credito">Crédito</option><br>
-                <button onclick="window.location.href='index.php'">Voltar para menu</button>
                 <input type="submit" value="submit">
             </select>
-
+            
         </fieldset>
     </form>
+    <button onclick="window.location.href='index.php'">Voltar para menu</button>
 </body>
 
 </html>
@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Verificar conexão;
     if (!$conn) {
-        die("Falha na conexão: " . mysql_connect_error());
+        die("Falha na conexão: " . mysqli_connect_error());
     }
 
     echo "Conectado com succes";

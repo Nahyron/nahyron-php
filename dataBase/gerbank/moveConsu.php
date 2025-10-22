@@ -21,7 +21,7 @@
     }
 
 
- button {
+ .voltar {
         padding: 10px;
         width: 260px;
         background-color: white;
@@ -41,7 +41,7 @@ h1 {
         </style>
 </head>
 <body>
-    <button onclick="window.location.href='index.php'">Voltar para menu</button>
+    <button class="voltar" onclick="window.location.href='index.php'">Voltar para menu</button>
 </body>
 </html>
 
@@ -66,7 +66,7 @@ $conn = mysqli_connect($servername, $username, $password, $database);
 
 // Verificar conexão;
 if (!$conn){
-    die("Falha na conexão: " . mysql_connect_error());
+    die("Falha na conexão: " . mysqli_connect_error());
 }
 
 echo "Conectado com succes<br><br>";
@@ -103,6 +103,9 @@ echo "</th>";
 echo "<th>";
 echo "Tipo de transação";
 echo "</th>";
+echo "<th>";
+echo "Excluir id";
+echo "</th>";
 
 
 
@@ -128,6 +131,9 @@ while ($linha = mysqli_fetch_assoc($resultados)){
     echo "</td>";
     echo "<td>";
     echo $linha['tipo'] . "<br>";
+    echo "</td>";
+     echo "<td>";
+    echo "<button class='excluir' onclick=\"window.location.href='excluirM.php?id= " . $linha['id'] .  "'\">Excluir</button>";
     echo "</td>";
     echo "</tr>";
 }

@@ -43,7 +43,7 @@ h1 {
         </style>
 </head>
 <body>
-    <button onclick="window.location.href='index.php'">Voltar para menu</button>
+    <button class="voltar" onclick="window.location.href='index.php'">Voltar para menu</button>
 </body>
 </html>
 
@@ -68,7 +68,7 @@ $conn = mysqli_connect($servername, $username, $password, $database);
 
 // Verificar conexão;
 if (!$conn){
-    die("Falha na conexão: " . mysql_connect_error());
+    die("Falha na conexão: " . mysqli_connect_error());
 }
 
 echo "Conectado com succes<br><br>";
@@ -94,7 +94,7 @@ echo "<th>";
 echo "Código";
 echo "</th>";
 echo "<th>";
-echo "Excluir";
+echo "Excluir id";
 echo "</th>";
 
 

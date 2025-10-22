@@ -16,7 +16,7 @@ echo "Conectado com succes";
 
 if(isset($_GET["id"])){
 $id = $_GET["id"];
-$sql = "DELETE FROM instituicao WHERE id = $id";
+$sql = "DELETE FROM cliente WHERE id = $id";
 if (mysqli_query($conn, $sql)) {
     echo "<script>alert('Ez game, linha deletada');</script><script>window.location.href='instConsu.php'</script>";
 } else {
