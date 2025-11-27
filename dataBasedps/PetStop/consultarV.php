@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Consultar veterinário</title>
 
-    <style>
+     <style>
 
         table, tr, td, th{
         border: 3px solid black;
@@ -15,13 +15,13 @@
     table{
         display: flex;
         justify-content: center;
-        width: 400px;
+        width: 500px;
         margin: 12% auto;
         background-color: skyblue;
     }
 
 
- .voltar {
+ button {
         padding: 10px;
         width: 260px;
         background-color: white;
@@ -30,8 +30,6 @@
         padding: 20px;
     }
 
- 
-
     body{
         background-color: lightblue;    
     }
@@ -39,11 +37,14 @@
 h1 {
             text-align: center;
         }
+  
+    </style>
 
-        </style>
+
+
 </head>
 <body>
-    <button class="voltar" onclick="window.location.href='index.php'">Voltar para menu</button>
+    <button onclick="window.location.href='index.html'">Voltar para menu</button>
 </body>
 </html>
 
@@ -53,7 +54,7 @@ h1 {
 
 
 $servername = "localhost";
-$database = "gerbank";
+$database = "petStop";
 $username = "root";
 $password = "";
 
@@ -77,7 +78,7 @@ echo "Conectado com succes<br><br>";
 
 // Verifica escolha de campos
 
-$sql = "SELECT * FROM agencia";
+$sql = "SELECT * FROM veterinarior";
 $resultados = mysqli_query($conn, $sql) or die("Erro ao retornar dados");
 
 // loop para ler todos os registros
@@ -88,16 +89,19 @@ echo "<th>";
 echo "id";
 echo "</th>";
 echo "<th>";
-echo "Numero agência";
+echo "nome";
 echo "</th>";
 echo "<th>";
-echo "Endereço";
+echo "idade";
 echo "</th>";
 echo "<th>";
-echo "Instituição id";
+echo "cpf";
 echo "</th>";
 echo "<th>";
-echo "Excluir id";
+echo "crmv";
+echo "</th>";
+echo "<th>";
+echo "formação";
 echo "</th>";
 
 
@@ -105,19 +109,22 @@ echo "</th>";
 while ($linha = mysqli_fetch_assoc($resultados)){
     echo "<tr>";
     echo "<td>";
-    echo $linha ['id'] . "<br>";
+    echo $linha ['id_vet'] . "<br>";
     echo "</td>";
     echo "<td>";
-    echo $linha['numagencia'] . "<br>";
+    echo $linha['nome'] . "<br>";
     echo "</td>";
     echo "<td>";
-    echo $linha['endereco'] . "<br>";
+    echo $linha['idade'] . "<br>";
     echo "</td>";
     echo "<td>";
-    echo $linha['instituicao_id'] . "<br>";
+    echo $linha['cpf'] . "<br>";
     echo "</td>";
-     echo "<td>";
-    echo "<button class='excluir' onclick=\"window.location.href='excluirA.php?id= " . $linha['id'] .  "'\">Excluir</button>";
+    echo "<td>";
+    echo $linha['crmv'] . "<br>";
+    echo "</td>";
+    echo "<td>";
+    echo $linha['formacao'] . "<br>";
     echo "</td>";
     echo "</tr>";
 }

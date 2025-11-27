@@ -15,9 +15,32 @@
          <label for="numA">Número da agência:</label><br>
         <input type="number" name="numA"><br><br>
 
-        <label for="code">instituição financeira:</label><br>
-        <input type="text" name="code"><br><br>
+       <div class="form-group">
+                    <label for="code">Instituição</label>
+                    <select name="code">
 
+                        <?php
+                        $sv = "localhost";
+                        $user = "root";
+                        $pass = "";
+                        $db = "gerbank";
+
+                        $con = mysqli_connect($sv, $user, $pass, $db);
+
+                        $resulta = "select * from instituicao";
+                        $consulta = mysqli_query($con, $resulta);
+
+                        while ($linha = mysqli_fetch_array($consulta)) {
+                            echo "<option value=". $linha['id'] . ">" . $linha['id'] . "</option>";
+                        }
+
+                        mysqli_close($con);
+
+                        ?>
+
+                    </select>
+                    <br>
+                </div>
         <label for="end">endereço:</label><br>
         <input type="text" name="end"><br><br>
 
@@ -38,7 +61,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ){
     $numA = $_POST["numA"];
     $code = $_POST["code"];
     $end = $_POST["end"];
-    
 $servername = "localhost";
 $database = "gerbank";
 $username = "root";
@@ -56,13 +78,12 @@ echo "Conectado com succes";
 $sql = "INSERT INTO agencia (
 
 numagencia, 
-endereco,
+enderecoA,
 instituicao_id
 ) VALUES (
    '$numA',
-   '$code',
-   '$end'
-    
+   '$end',
+   '$code'
 );   ";
 
 if(mysqli_query($conn, $sql)){

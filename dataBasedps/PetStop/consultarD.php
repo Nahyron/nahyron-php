@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>consulttar veterinario</title>
-
-     <style>
+    <title>Consultar dono</title>
+    <style>
 
         table, tr, td, th{
         border: 3px solid black;
@@ -15,7 +14,7 @@
     table{
         display: flex;
         justify-content: center;
-        width: 800px;
+        width: 400px;
         margin: 12% auto;
         background-color: skyblue;
     }
@@ -39,11 +38,9 @@ h1 {
         }
   
     </style>
-
-
 </head>
 <body>
-     <button onclick="window.location.href='index.html'">Voltar para menu</button>
+      <button onclick="window.location.href='index.html'">Voltar para menu</button>
 </body>
 </html>
 
@@ -68,7 +65,7 @@ $conn = mysqli_connect($servername, $username, $password, $database);
 
 // Verificar conexão;
 if (!$conn){
-    die("Falha na conexão: " . mysql_connect_error());
+    die("Falha na conexão: " . mysqli_connect_error());
 }
 
 echo "Conectado com succes<br><br>";
@@ -77,7 +74,7 @@ echo "Conectado com succes<br><br>";
 
 // Verifica escolha de campos
 
-$sql = "SELECT * FROM infoConsulta";
+$sql = "SELECT * FROM infoDono";
 $resultados = mysqli_query($conn, $sql) or die("Erro ao retornar dados");
 
 // loop para ler todos os registros
@@ -88,49 +85,35 @@ echo "<th>";
 echo "id";
 echo "</th>";
 echo "<th>";
-echo "nome_dono";
+echo "nome";
 echo "</th>";
 echo "<th>";
-echo "nomePet";
+echo "cpf";
 echo "</th>";
 echo "<th>";
-echo "nomeMédico";
+echo "idade";
 echo "</th>";
 echo "<th>";
-echo "descrição do dono";
+echo "endereço";
 echo "</th>";
-echo "<th>";
-echo "data de consulta";
-echo "</th>";
-echo "<th>";
-echo "imagem do animal";
-echo "</th>";
-
-
 
 
 while ($linha = mysqli_fetch_assoc($resultados)){
     echo "<tr>";
     echo "<td>";
-    echo $linha ['id'] . "<br>";
+    echo $linha ['id_dono'] . "<br>";
     echo "</td>";
     echo "<td>";
-    echo $linha['nomeDono'] . "<br>";
+    echo $linha['nome'] . "<br>";
     echo "</td>";
     echo "<td>";
-    echo $linha['nomePet'] . "<br>";
+    echo $linha['cpf'] . "<br>";
     echo "</td>";
     echo "<td>";
-    echo $linha['nomeMedico'] . "<br>";
+    echo $linha['idade'] . "<br>";
     echo "</td>";
     echo "<td>";
-    echo $linha['descDono'] . "<br>";
-    echo "</td>";
-    echo "<td>";
-    echo $linha['dataConsu'] . "<br>";
-    echo "</td>";
-    echo "<td><img src='";
-    echo $linha['imagem'] . "' width='300px'><br>";
+    echo $linha['endereco'] . "<br>";
     echo "</td>";
     echo "</tr>";
 }
@@ -140,4 +123,3 @@ mysqli_close($conn);
 
 
 ?>
-

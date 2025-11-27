@@ -67,5 +67,6 @@
     <button onclick="window.location.href='instConsu.php'">Consultar Instituição financeira</button>
     <button onclick="window.location.href='bankConsu.php'">Consultar Conta Bancária</button>
     <button onclick="window.location.href='moveConsu.php'">Consultar movimentações</button>
+    <button onclick="window.location.href='tudoTable.php'">ver a tudoTable KKJ</button>
 </body>
 </html>

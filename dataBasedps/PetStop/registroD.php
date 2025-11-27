@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro animal</title>
+    <title>Registra dono</title>
 
     <style>
-             fieldset {
+         fieldset {
             position: absolute;
             top: 25%;
             left: 40%;
@@ -45,38 +45,33 @@
 <body>
      <form method="POST">
         <fieldset>
-            <legend>Registrar Animal</legend><br>
+            <legend>Registrar Dono</legend><br>
         <label name="nome">Nome:</label><br>
         <input type="text" name="nome"><br><br>
-        <label name="animal">animal:</label><br>
-        <input type="text" name="animal"><br><br>
-        <label name="raca">raça:</label><br>
-        <input type="text" name="raca"><br><br>
+        <label name="cpf">cpf:</label><br>
+        <input type="number" name="cpf"><br><br>
+        <label name="endereco">endereço:</label><br>
+        <input type="text" name="endereco"><br><br>
         <label name="idade">idade:</label><br>
         <input type="number" name="idade"><br><br>
-        <label name="cor">cor:</label><br>
-        <input type="text" name="cor"><br><br>
-        <input type="submit" value="enviar">
-
+        <input type="submit" value="Enviar">
         </fieldset>
-    </form>
+        </form>
         <button onclick="window.location.href='index.html'">Voltar para menu</button>
 
 </body>
 </html>
 
 
-
-
 <?php
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" ){
 
     $nome = $_POST["nome"];
-    $animal = $_POST["animal"];
-    $raca = $_POST ["raca"];
-    $idade  = $_POST["idade"];
-    $cor  = $_POST["cor"];
+    $cpf = $_POST["cpf"];
+    $idade = $_POST ["idade"];
+    $endereco  = $_POST["endereco"];
     
 $servername = "localhost";
 $database = "pet1";
@@ -87,22 +82,22 @@ $conn = mysqli_connect($servername, $username, $password, $database);
 
 // Verificar conexão;
 if (!$conn){
-    die("Falha na conexão: " . mysql_connect_error());
+    die("Falha na conexão: " . mysqli_connect_error());
 }
 
 echo "Conectado com succes";
 
-$sql = "INSERT INTO animal (
+$sql = "INSERT INTO dono (
 
-animal, 
-raca, 
-idade,
-cor
+nome, 
+cpf, 
+endereco,
+idade
 ) VALUES (
-   '$animal',
-   '$raca',
-   '$idade',
-   '$cor'
+   '$nome',
+   '$cpf',
+   '$endereco',
+   '$idade'
     
 );   ";
 
@@ -121,5 +116,10 @@ if(mysqli_query($conn, $sql)){
 mysqli_close($conn);
 
 }
+
+
+
+
+
 
 ?>
