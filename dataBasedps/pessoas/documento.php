@@ -202,10 +202,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             <input type="text" placeholder="Digite seu CNPJ" name="cnpj">
             
             <label>Inscrição Municipal:</label>
-            <input type="text" placeholder="Inscrição Municipal" name="insM">
+            <input type="numberko" placeholder="Inscrição Municipal" name="insM">
             
             <label>Inscrição Estadual:</label>
-            <input type="text" placeholder="Inscrição Estadual" name="insE">
+            <input type="number" placeholder="Inscrição Estadual" name="insE">
             
             <input type="submit" value="Salvar Documentos">
         </fieldset>
