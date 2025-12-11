@@ -22,6 +22,7 @@ require_once 'conexao.php';
     <button onclick="window.location.href='cadastroP.php'">Cadastrar usuarios em derry</button>
     <button onclick="window.location.href='cadastroA.php'">Cadastrar autores</button>
     <button onclick="window.location.href='cadastroE.php'">Cadastrar editoras</button>
+     <button onclick="window.location.href='cadastroO.php'">Cadastrar obras (livros)</button>
     <button onclick="window.location.href='emprestimo.php'">emprestimo</button>
     </div>
 
