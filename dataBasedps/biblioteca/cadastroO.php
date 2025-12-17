@@ -9,40 +9,34 @@ $querye = mysqli_query($conn, $sqle);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nome = $_POST['nome'];
-    $preco = $_POST['preco'];
     $genero = $_POST['genero'];
     $idade = $_POST['idade'];
     $idioma = $_POST['idioma'];
     $paginas = $_POST['paginas'];
-    $emprestimo = $_POST['emprestimo'];
     $autor = $_POST['autor'];
     $editora = $_POST['editora'];
 
     $sql = "INSERT INTO cadastro_obra(
      nome_obra,
-    preco,
     genero,
     faixa_etaria,
     idioma,
     paginas,
-    emprestimo,
     autor_id,
     editora_id
     )VALUES(
    '$nome',
-   '$preco',
    '$genero',
    '$idade',
    '$idioma',
    '$paginas',
-   '$emprestimo',
    '$autor',
    '$editora'
     );";
 
 
     if (mysqli_query($conn, $sql)) {
-        echo "<script>alert('quer flutuar? 🎈');</script>";
+        echo "<script>alert('deu certo 🎈');</script>";
     } else {
         // Adicionei o 'echo' para o erro aparecer na tela
         echo "Erro ao cadastrar: " . mysqli_error($conn);
@@ -72,9 +66,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <label name="nome">Nome do livro</label><br>
             <input type="text" name="nome" placeholder="nome do livro"><br><br>
 
-            <label name="preco">preco</label><br>
-            <input type="number" name="preco" placeholder="valor"><br><br>
-
             <label name="genero">genero</label><br>
             <input type="text" name="genero"><br><br>
 
@@ -88,8 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <input type="number" name="paginas"><br><br>
 
 
-            <label name="emprestimo">emprestimo</label><br>
-            <input type="text" name="emprestimo"><br><br>
+            
 
 
             <label name="autor">autor</label>
@@ -110,7 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <label name="editora">editora</label>
 
             <div id="editora-div" class="oculto">
-                <label>Selecione o autor:</label>
+                <label>Selecione a editora:</label>
                 <select name="editora" id="editora-id">
                     <option value="">ver editoras</option>
                     <?php while ($row = mysqli_fetch_assoc($querye)): ?>
@@ -127,6 +117,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <button type="submit">Enviar para derry</button>
         </fieldset>
     </form>
+
+    <button onclick="window.location.href='index.php'">voltar</button>
 </body>
 
 </html>

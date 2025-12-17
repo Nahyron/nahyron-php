@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     );";
 
        if (mysqli_query($conn, $sql)) {
-        echo "<script>alert('quer flutuar? 🎈');</script>";
+        echo "<script>alert('deu certo, boa leitura 🎈');</script>";
     } else {
         // Adicionei o 'echo' para o erro aparecer na tela
         echo "Erro ao cadastrar: " . mysqli_error($conn);
@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <input type="submit">
         </fieldset>
     </form>
-
+<button onclick="window.location.href='index.php'">voltar</button>
 
 </body>
 
